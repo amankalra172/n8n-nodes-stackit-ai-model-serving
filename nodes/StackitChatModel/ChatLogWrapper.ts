@@ -1,5 +1,5 @@
-import type { IDataObject, ISupplyDataFunctions, JsonObject } from 'n8n-workflow';
-import { NodeConnectionType, NodeError, NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, ISupplyDataFunctions, JsonObject, NodeConnectionType } from 'n8n-workflow';
+import { NodeConnectionTypes, NodeError, NodeOperationError } from 'n8n-workflow';
 
 type ChatMessage = { role: 'system' | 'user' | 'assistant' | 'tool' | 'function'; content: string };
 
@@ -11,7 +11,7 @@ export class ChatLogWrapper implements ChatModelLike {
   constructor(
     private inner: ChatModelLike,
     private executionFunctions: ISupplyDataFunctions,
-    private connectionType: NodeConnectionType = NodeConnectionType.AiLanguageModel,
+    private connectionType: NodeConnectionType = NodeConnectionTypes.AiLanguageModel,
   ) {}
 
   async invoke(messages: ChatMessage[] | string): Promise<{ content: string }> {

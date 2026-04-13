@@ -1,6 +1,6 @@
 import { ChatOpenAI } from '@langchain/openai';
 import {
-    NodeConnectionType,
+    NodeConnectionTypes,
     type INodeType,
     type INodeTypeDescription,
     type ISupplyDataFunctions,
@@ -38,7 +38,7 @@ export class StackitChatModel implements INodeType {
 
 		inputs: [],
 
-		outputs: [NodeConnectionType.AiLanguageModel],
+		outputs: [NodeConnectionTypes.AiLanguageModel],
 		outputNames: ['Model'],
 		credentials: [
 			{
