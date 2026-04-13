@@ -56,6 +56,6 @@
     },
     "peerDependencies": {
         "@langchain/openai": "*",
-        "n8n-workflow": "*"
+        "n8n-workflow": ">=2.0.0"
     }
 }
