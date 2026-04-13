@@ -53,6 +53,7 @@
         "typescript": "5.9.2"
     },
     "peerDependencies": {
+        "@langchain/openai": "*",
         "n8n-workflow": "*"
     },
     "dependencies": {}
